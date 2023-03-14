@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +9,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Markup;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
@@ -18,20 +20,25 @@ namespace BankomatWPF
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+   
     public partial class MainWindow : Window
     {
+        public static NavigationService NavS => ((MainWindow)Application.Current.MainWindow).MainFrame.NavigationService;
         public MainWindow()
         {
             InitializeComponent();
+            NavS.Navigate(new Uri("GlowneOkno.xaml",UriKind.Relative));
         }
+        
         int[] banknoty = { 500, 200, 100, 50, 20, 10 };
         int[] liczbaBanknotow = { 10, 10, 10, 10 };
         int wyplata = 0;
+        public static string log = String.Empty;
 
 
         public void Bankomat()
         {
-            wyplata = 1230;
+            //wyplata = 1230;
             int[,] dp = new int[wyplata + 1, banknoty.Length];
             for (int i = 0; i < banknoty.Length; i++)
             {
@@ -55,16 +62,16 @@ namespace BankomatWPF
                     }
                 }
             }
-            Console.WriteLine("Minimum number of banknoty needed: " + dp[wyplata, banknoty.Length - 1]);
+            //Console.WriteLine("Minimum number of banknoty needed: " + dp[wyplata, banknoty.Length - 1]);
             //Log
-            Console.Write("Nominals used: ");
+            log += "Nominaly uzyte: ";
             int row = wyplata, col = banknoty.Length - 1;
             while (row > 0 || col > 0)
             {
                 int value = row - banknoty[col];
                 if (value >= 0 && dp[value, col] != int.MaxValue && dp[value, col] + 1 == dp[row, col])
                 {
-                    Console.Write(banknoty[col] + " ");
+                    log += banknoty[col] + " ";
                     row = value;
                     liczbaBanknotow[col]--;
                 }
@@ -77,7 +84,7 @@ namespace BankomatWPF
                     }
                     if (nextCol >= 0)
                     {
-                        Console.Write(banknoty[nextCol] + " ");
+                        log += banknoty[nextCol] + " ";
                         row -= banknoty[nextCol];
                         liczbaBanknotow[nextCol]--;
                     }
@@ -89,5 +96,13 @@ namespace BankomatWPF
             }
             //Koniec loga
         }
+
+
+        //Nie uzywac bakomatu wyzej!
+
+
+
+
+
     }
 }

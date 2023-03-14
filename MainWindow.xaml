@@ -5,68 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BankomatWPF"
         mc:Ignorable="d"
-        Title="Aplikacja Bankomat: Glowne okno" Height="450" Width="800" Background="#483D8B">
+        Title="Aplikacja Bankomat" Height="450" Width="800" Background="#483D8B" ResizeMode="NoResize">
     <Grid>
-        <Frame x:Name="MainWindow"/>
-
-
-        <Button x:Name="btnWplata" Content=" Wplata  " Margin="0,0,0,30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Background="LightPink" Foreground="White" FontSize="48">
-            <Button.Template>
-                <ControlTemplate TargetType="Button">
-                    <Border Background="{TemplateBinding Background}">
-                        <Border.CornerRadius>
-                            <CornerRadius TopLeft="0" TopRight="20" BottomLeft="0" BottomRight="20"/>
-                        </Border.CornerRadius>
-                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    </Border>
-                </ControlTemplate>
-            </Button.Template>
-        </Button>
-
-        <Button x:Name="btnStanKonta" Content="  Stan Konta " Margin="0,0,0,30" VerticalAlignment="Bottom" HorizontalAlignment="Right" Background="LightPink" Foreground="White" FontSize="48">
-            <Button.Template>
-                <ControlTemplate TargetType="Button">
-                    <Border Background="{TemplateBinding Background}">
-                        <Border.CornerRadius>
-                            <CornerRadius TopLeft="20" TopRight="0" BottomLeft="20" BottomRight="0"/>
-                        </Border.CornerRadius>
-                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    </Border>
-                </ControlTemplate>
-            </Button.Template>
-        </Button>
-        
-        
-        
-        
-        <Button x:Name="btnWyplata" Content=" Wyplata  " Grid.Row="1" Margin="0,30,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Background="LightPink" Foreground="White" FontSize="48">
-            <Button.Template>
-                <ControlTemplate TargetType="Button">
-                    <Border Background="{TemplateBinding Background}">
-                        <Border.CornerRadius>
-                            <CornerRadius TopLeft="0" TopRight="20" BottomLeft="0" BottomRight="20"/>
-                        </Border.CornerRadius>
-                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    </Border>
-                </ControlTemplate>
-            </Button.Template>
-        </Button>
-
-        <Button Content=" Panel Administracyjny " Background="LightPink" Foreground="White" Grid.Row="1" FontSize="48" VerticalAlignment="Bottom" HorizontalAlignment="Center">
-            <Button.Template>
-                <ControlTemplate TargetType="Button">
-                    <Border CornerRadius="20" Background="{TemplateBinding Background}">
-                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    </Border>
-                </ControlTemplate>
-            </Button.Template>
-        </Button>
-
-
-
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
+        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

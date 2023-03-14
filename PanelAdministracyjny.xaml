@@ -6,9 +6,11 @@
       xmlns:local="clr-namespace:BankomatWPF"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Aplikacja Bankomat: PanelAdministracyjny" Background="#483D8B" >
+      Title="PanelAdministracyjny">
 
     <Grid>
-        <Frame x:Name="PanelAdministracyjny"/>
+
+        <Button Content="TEST" Height="100" Click="Button_Click"/>
+
     </Grid>
 </Page>
