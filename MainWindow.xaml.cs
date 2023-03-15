@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -28,8 +29,15 @@ namespace BankomatWPF
         {
             InitializeComponent();
             NavS.Navigate(new Uri("GlowneOkno.xaml",UriKind.Relative));
+
+            if (!File.Exists("Log.xml"))
+            {
+                using (StreamWriter sw = File.CreateText("Log.xml"))
+                {
+                    sw.WriteLine("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<largeText>\n\n</largeText>");
+                }
+            }
         }
-        
         public static int[] banknoty = { 500, 200, 100, 50, 20, 10 };
         public static int[] liczbaBanknotow = { 10, 10, 10, 10 };
         //Dodac XMLa i czytanie z niego

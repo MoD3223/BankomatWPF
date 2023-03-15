@@ -37,7 +37,7 @@ namespace BankomatWPF
 
         private void btnLog_Click(object sender, RoutedEventArgs e)
         {
-
+            MainWindow.NavS.Navigate(new Uri("Log.xaml", UriKind.Relative));
         }
     }
 }

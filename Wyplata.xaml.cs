@@ -21,6 +21,7 @@ namespace BankomatWPF
     /// </summary>
     public partial class Wyplata : Page
     {
+        Decimal x;
         public Wyplata()
         {
             InitializeComponent();
@@ -37,18 +38,33 @@ namespace BankomatWPF
 
         private void btnPowrot_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow.NavS.Navigate(new Uri("GlowneOkno.xaml", UriKind.Relative));
+            MainWindow.NavS.GoBack();
         }
 
         private void btnZatwierdz_Click(object sender, RoutedEventArgs e)
         {
+            if (x%10 == 0)
+            {
 
+            }
+            else
+            {
+
+            }
         }
 
         private void txtBoxWyplata_TextChanged(object sender, TextChangedEventArgs e)
         {
             UsunLitery();
-            int x = Int32.Parse(txtBoxWyplata.Text);
+            if (!Decimal.TryParse(txtBoxWyplata.Text,out x))
+            {
+                txtBoxWyplata.Text = String.Empty;
+                MainWindow.NavS.Navigate(new Uri("Blad.xaml",UriKind.Relative));
+            }
+            else
+            {
+                x = Decimal.Parse(txtBoxWyplata.Text);
+            }
             
         }
     }

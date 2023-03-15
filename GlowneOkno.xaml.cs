@@ -29,22 +29,12 @@ namespace BankomatWPF
 
         private void btnWplata_Click(object sender, RoutedEventArgs e)
         {
-
+            MainWindow.NavS.Navigate(new Uri("Wplata.xaml", UriKind.Relative));
         }
 
         private void btnWyplata_Click(object sender, RoutedEventArgs e)
         {
             MainWindow.NavS.Navigate(new Uri("Wyplata.xaml", UriKind.Relative));
-        }
-
-        private void btnStanKonta_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnLog_Click(object sender, RoutedEventArgs e)
-        {
-
         }
 
         private void btnPanel_Click(object sender, RoutedEventArgs e)

@@ -15,7 +15,7 @@
 
 
 
-        <Button x:Name="btnWplata" Content=" Wplata  " Margin="0,0,0,30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Background="LightPink" Foreground="White" FontSize="48" Click="btnWplata_Click">
+        <Button x:Name="btnWplata" Content=" Wplata  " VerticalAlignment="Center" HorizontalAlignment="Left" Background="LightPink" Foreground="White" FontSize="48" Click="btnWplata_Click">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Border Background="{TemplateBinding Background}">
@@ -28,7 +28,7 @@
             </Button.Template>
         </Button>
 
-        <Button x:Name="btnStanKonta" Content="  Stan Konta " Margin="0,0,0,30" VerticalAlignment="Bottom" HorizontalAlignment="Right" Background="LightPink" Foreground="White" FontSize="48" Click="btnStanKonta_Click">
+        <Button x:Name="btnWyplata" Content=" Wyplata  " VerticalAlignment="Center" HorizontalAlignment="Right" Background="LightPink" Foreground="White" FontSize="48" Click="btnWyplata_Click">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Border Background="{TemplateBinding Background}">
@@ -40,36 +40,6 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-
-
-
-
-        <Button x:Name="btnWyplata" Content=" Wyplata  " Grid.Row="1" Margin="0,30,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Background="LightPink" Foreground="White" FontSize="48" Click="btnWyplata_Click">
-            <Button.Template>
-                <ControlTemplate TargetType="Button">
-                    <Border Background="{TemplateBinding Background}">
-                        <Border.CornerRadius>
-                            <CornerRadius TopLeft="0" TopRight="20" BottomLeft="0" BottomRight="20"/>
-                        </Border.CornerRadius>
-                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    </Border>
-                </ControlTemplate>
-            </Button.Template>
-        </Button>
-
-        <Button x:Name="btnLog" Content="  Log " Grid.Row="1" Margin="0,30,0,0" VerticalAlignment="Top" HorizontalAlignment="Right" Background="LightPink" Foreground="White" FontSize="48" Click="btnLog_Click">
-            <Button.Template>
-                <ControlTemplate TargetType="Button">
-                    <Border Background="{TemplateBinding Background}">
-                        <Border.CornerRadius>
-                            <CornerRadius TopLeft="20" TopRight="0" BottomLeft="20" BottomRight="0"/>
-                        </Border.CornerRadius>
-                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    </Border>
-                </ControlTemplate>
-            </Button.Template>
-        </Button>
-
 
 
 
@@ -87,9 +57,5 @@
 
         
 
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
     </Grid>
 </Page>

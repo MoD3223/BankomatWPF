@@ -56,6 +56,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Blad.xaml.cs">
+      <DependentUpon>Blad.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Log.xaml.cs">
       <DependentUpon>Log.xaml</DependentUpon>
     </Compile>
@@ -65,6 +68,10 @@
     <Compile Include="Wyplata.xaml.cs">
       <DependentUpon>Wyplata.xaml</DependentUpon>
     </Compile>
+    <Page Include="Blad.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="GlowneOkno.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -129,6 +136,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Log.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
