@@ -16,26 +16,16 @@ using System.Windows.Shapes;
 namespace BankomatWPF
 {
     /// <summary>
-    /// Interaction logic for PanelAdministracyjny.xaml
+    /// Logika interakcji dla klasy Log.xaml
     /// </summary>
-    public partial class PanelAdministracyjny : Page
+    public partial class Log : Page
     {
-        public PanelAdministracyjny()
+        public Log()
         {
             InitializeComponent();
         }
 
         private void btnPowrot_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow.NavS.GoBack();
-        }
-
-        private void btnZeruj_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnLog_Click(object sender, RoutedEventArgs e)
         {
 
         }

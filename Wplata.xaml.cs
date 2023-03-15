@@ -16,28 +16,18 @@ using System.Windows.Shapes;
 namespace BankomatWPF
 {
     /// <summary>
-    /// Interaction logic for PanelAdministracyjny.xaml
+    /// Logika interakcji dla klasy Wplata.xaml
     /// </summary>
-    public partial class PanelAdministracyjny : Page
+    public partial class Wplata : Page
     {
-        public PanelAdministracyjny()
+        public Wplata()
         {
             InitializeComponent();
         }
 
         private void btnPowrot_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow.NavS.GoBack();
-        }
-
-        private void btnZeruj_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnLog_Click(object sender, RoutedEventArgs e)
-        {
-
+            MainWindow.NavS.Navigate(new Uri("GlowneOkno.xaml", UriKind.Relative));
         }
     }
 }

@@ -34,7 +34,7 @@ namespace BankomatWPF
 
         private void btnWyplata_Click(object sender, RoutedEventArgs e)
         {
-
+            MainWindow.NavS.Navigate(new Uri("Wyplata.xaml", UriKind.Relative));
         }
 
         private void btnStanKonta_Click(object sender, RoutedEventArgs e)
@@ -51,9 +51,6 @@ namespace BankomatWPF
         {
             
             MainWindow.NavS.Navigate(new Uri("PanelAdministracyjny.xaml", UriKind.Relative));
-            //Content = Nawigacja.panelAdministracyjny;
-            //frameGlowny.Content = null;
-
         }
     }
 }

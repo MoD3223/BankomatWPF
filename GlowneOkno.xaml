@@ -8,7 +8,12 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Aplikacja Bankomat: Glowne okno" Height="410" Width="800" Background="#483D8B">
     <Grid x:Name="GlownyGrid">
-        <Frame x:Name="frameGlowny"/>
+
+        <TextBlock Text="Witamy w Banku." Foreground="White" HorizontalAlignment="Center" Margin="0,10,0,0" FontSize="24"/>
+        <TextBlock Text="Wybierz co chcesz zrobic" Foreground="White" HorizontalAlignment="Center" Margin="0,40,0,0" FontSize="24"/>
+
+
+
 
         <Button x:Name="btnWplata" Content=" Wplata  " Margin="0,0,0,30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Background="LightPink" Foreground="White" FontSize="48" Click="btnWplata_Click">
             <Button.Template>
@@ -80,7 +85,7 @@
             </Button.Template>
         </Button>
 
-
+        
 
         <Grid.RowDefinitions>
             <RowDefinition/>

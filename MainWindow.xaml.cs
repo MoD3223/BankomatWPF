@@ -30,8 +30,14 @@ namespace BankomatWPF
             NavS.Navigate(new Uri("GlowneOkno.xaml",UriKind.Relative));
         }
         
-        int[] banknoty = { 500, 200, 100, 50, 20, 10 };
-        int[] liczbaBanknotow = { 10, 10, 10, 10 };
+        public static int[] banknoty = { 500, 200, 100, 50, 20, 10 };
+        public static int[] liczbaBanknotow = { 10, 10, 10, 10 };
+        //Dodac XMLa i czytanie z niego
+        //stan konta niepotrzebny
+        //zapisywanie logow do pliku tekstowego
+        //Dodawac /n po kazdym logu aby dalo sie je odczytac
+        //Dodac date i godzine kazdego loga
+
         int wyplata = 0;
         public static string log = String.Empty;
 
