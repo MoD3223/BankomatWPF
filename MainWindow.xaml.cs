@@ -15,6 +15,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace BankomatWPF
 {
@@ -25,96 +27,205 @@ namespace BankomatWPF
     public partial class MainWindow : Window
     {
         public static NavigationService NavS => ((MainWindow)Application.Current.MainWindow).MainFrame.NavigationService;
+        public static XmlDocument doc = new XmlDocument();
         public MainWindow()
         {
             InitializeComponent();
             NavS.Navigate(new Uri("GlowneOkno.xaml",UriKind.Relative));
 
+            
             if (!File.Exists("Log.xml"))
             {
-                using (StreamWriter sw = File.CreateText("Log.xml"))
-                {
-                    sw.WriteLine("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<largeText>\n\n</largeText>");
-                }
+
+                XmlDeclaration xmlDecl = doc.CreateXmlDeclaration("1.0", "UTF-8", null);
+                doc.AppendChild(xmlDecl);
+
+                XmlElement rootElem = doc.CreateElement("Root");
+                doc.AppendChild(rootElem);
+
+                XmlElement banknotyElem = doc.CreateElement("BanknotyXML");
+                rootElem.AppendChild(banknotyElem);
+
+                AddNumberElement(doc, banknotyElem, "number1", "500,10");
+                AddNumberElement(doc, banknotyElem, "number2", "200,10");
+                AddNumberElement(doc, banknotyElem, "number3", "100,10");
+                AddNumberElement(doc, banknotyElem, "number4", "50,10");
+                AddNumberElement(doc, banknotyElem, "number5", "20,10");
+                AddNumberElement(doc, banknotyElem, "number6", "10,10");
+
+                XmlElement logElem = doc.CreateElement("Log");
+                rootElem.AppendChild(logElem);
+
+
+                doc.Save("Log.xml");
+            }
+            else
+            {
+                doc.Load("Log.xml");
+            }
+            LoadDictionaryFromLog();
+        }
+        public static string DzisiejszaData()
+        {
+            return DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss");
+        }
+
+        public static Dictionary<int, int> banknoty = new Dictionary<int, int>()
+        {
+            //celowo zostawione puste!
+        };
+
+
+
+        public static void LoadDictionaryFromLog()
+        {
+            XmlNodeList nodes = doc.SelectNodes("/Root//BanknotyXML/*");
+            foreach (XmlNode node in nodes)
+            {
+                string[] values = node.InnerText.Split(',');
+                int nominal = int.Parse(values[0].Trim());
+                int count = int.Parse(values[1].Trim());
+                banknoty.Add(nominal, count);
             }
         }
-        public static int[] banknoty = { 500, 200, 100, 50, 20, 10 };
-        public static int[] liczbaBanknotow = { 10, 10, 10, 10 };
-        //Dodac XMLa i czytanie z niego
-        //stan konta niepotrzebny
-        //zapisywanie logow do pliku tekstowego
-        //Dodawac /n po kazdym logu aby dalo sie je odczytac
-        //Dodac date i godzine kazdego loga
 
-        int wyplata = 0;
-        public static string log = String.Empty;
-
-
-        public void Bankomat()
+        public static void SaveDictionaryFromLog()
         {
-            //wyplata = 1230;
-            int[,] dp = new int[wyplata + 1, banknoty.Length];
-            for (int i = 0; i < banknoty.Length; i++)
+            XmlNode banknotyElem = doc.SelectSingleNode("/Root/BanknotyXML");
+
+            banknotyElem.SelectSingleNode("number1").InnerText = $"{500},{banknoty[500]}";
+            banknotyElem.SelectSingleNode("number2").InnerText = $"{200},{banknoty[200]}";
+            banknotyElem.SelectSingleNode("number3").InnerText = $"{100},{banknoty[100]}";
+            banknotyElem.SelectSingleNode("number4").InnerText = $"{50},{banknoty[50]}";
+            banknotyElem.SelectSingleNode("number5").InnerText = $"{20},{banknoty[20]}";
+            banknotyElem.SelectSingleNode("number6").InnerText = $"{10},{banknoty[10]}";
+
+            doc.Save("Log.xml");
+        }
+
+
+        private static void AddNumberElement(XmlDocument doc, XmlElement parentElem, string elemName, string elemValue)
+        {
+            XmlElement elem = doc.CreateElement(elemName);
+            parentElem.AppendChild(elem);
+
+            elem.InnerText = elemValue;
+        }
+        public static string Start(int doWyplacenia, string wyplataLog)
+        {
+
+            List<List<int>> possibleCombinations = GetPossibleCombinations(doWyplacenia, banknoty.Keys.ToList());
+
+            List<int> bestCombination = FindBestCombination(possibleCombinations, banknoty);
+
+            Updatebanknoty(bestCombination, banknoty);
+
+            int liczba = 0;
+            wyplataLog += "Wyplacono Banknoty:";
+            foreach (int banknote in bestCombination)
             {
-                for (int j = 0; j <= wyplata; j++)
-                {
-                    dp[j, i] = j == 0 ? 0 : int.MaxValue;
-                }
+                liczba += 1;
+                wyplataLog += $" {banknote} ";
             }
-            for (int i = 0; i < banknoty.Length; i++)
+
+            if (liczba == 0)
             {
-                for (int j = 1; j <= wyplata; j++)
-                {
-                    int value = j - banknoty[i];
-                    if (value >= 0 && dp[value, i] != int.MaxValue && dp[value, i] + 1 < dp[j, i])
-                    {
-                        dp[j, i] = dp[value, i] + 1;
-                    }
-                    if (i > 0 && dp[j, i - 1] < dp[j, i])
-                    {
-                        dp[j, i] = dp[j, i - 1];
-                    }
-                }
+                wyplataLog = String.Empty;
             }
-            //Console.WriteLine("Minimum number of banknoty needed: " + dp[wyplata, banknoty.Length - 1]);
-            //Log
-            log += "Nominaly uzyte: ";
-            int row = wyplata, col = banknoty.Length - 1;
-            while (row > 0 || col > 0)
+            return wyplataLog;
+        }
+
+        static List<List<int>> GetPossibleCombinations(int amount, List<int> denominations)
+        {
+            List<List<int>> possibleCombinations = new List<List<int>>();
+
+            GetPossibleCombinationsRecursive(amount, denominations, new List<int>(), possibleCombinations);
+
+            return possibleCombinations;
+        }
+
+        static void GetPossibleCombinationsRecursive(int amount, List<int> denominations, List<int> combination, List<List<int>> possibleCombinations)
+        {
+            if (amount == 0)
             {
-                int value = row - banknoty[col];
-                if (value >= 0 && dp[value, col] != int.MaxValue && dp[value, col] + 1 == dp[row, col])
+                possibleCombinations.Add(combination);
+                return;
+            }
+
+            if (denominations.Count == 0)
+            {
+                return;
+            }
+
+            int denomination = denominations[0];
+            denominations.RemoveAt(0);
+
+            int maxCount = amount / denomination;
+
+            for (int i = maxCount; i >= 0; i--)
+            {
+                List<int> newCombination = new List<int>(combination);
+                for (int j = 0; j < i; j++)
                 {
-                    log += banknoty[col] + " ";
-                    row = value;
-                    liczbaBanknotow[col]--;
+                    newCombination.Add(denomination);
                 }
-                else
+
+                GetPossibleCombinationsRecursive(amount - i * denomination, new List<int>(denominations), newCombination, possibleCombinations);
+            }
+
+            denominations.Insert(0, denomination);
+        }
+
+        static List<int> FindBestCombination(List<List<int>> possibleCombinations, Dictionary<int, int> banknoty)
+        {
+            List<int> bestCombination = new List<int>();
+            int bestScore = 0;
+
+            foreach (List<int> combination in possibleCombinations)
+            {
+                int score = 0;
+                bool hasAllDenominations = true;
+
+                foreach (int denomination in combination.Distinct())
                 {
-                    int nextCol = col - 1;
-                    while (nextCol >= 0 && (liczbaBanknotow[nextCol] == 0 || dp[row, nextCol] == int.MaxValue || dp[row, nextCol] >= dp[row, col]))
+                    if (banknoty.ContainsKey(denomination))
                     {
-                        nextCol--;
-                    }
-                    if (nextCol >= 0)
-                    {
-                        log += banknoty[nextCol] + " ";
-                        row -= banknoty[nextCol];
-                        liczbaBanknotow[nextCol]--;
+                        int count = combination.Count(x => x == denomination);
+                        if (count <= banknoty[denomination])
+                        {
+                            score += count * (banknoty[denomination] - count + 1); // bias towards using more of the banknotes in stock
+                        }
+                        else
+                        {
+                            hasAllDenominations = false;
+                            break;
+                        }
                     }
                     else
                     {
+                        hasAllDenominations = false;
                         break;
                     }
                 }
+
+                if (hasAllDenominations && score > bestScore)
+                {
+                    bestScore = score;
+                    bestCombination = combination;
+                }
             }
-            //Koniec loga
+
+            return bestCombination;
         }
 
 
-        //Nie uzywac bakomatu wyzej!
-
-
+        static void Updatebanknoty(List<int> banknotes, Dictionary<int, int> banknoty)
+        {
+            foreach (int banknote in banknotes)
+            {
+                banknoty[banknote]--;
+            }
+        }
 
 
 

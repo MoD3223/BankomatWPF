@@ -25,6 +25,14 @@ namespace BankomatWPF
             InitializeComponent();
         }
 
+        public static void ZerujBanknoty(Dictionary<int, int> dictionary)
+        {
+            foreach (int liczba in dictionary.Keys.ToList())
+            {
+                dictionary[liczba] = 0;
+            }
+        }
+
         private void btnPowrot_Click(object sender, RoutedEventArgs e)
         {
             MainWindow.NavS.GoBack();
@@ -32,7 +40,8 @@ namespace BankomatWPF
 
         private void btnZeruj_Click(object sender, RoutedEventArgs e)
         {
-
+            ZerujBanknoty(MainWindow.banknoty);
+            //Dodac log tutaj
         }
 
         private void btnLog_Click(object sender, RoutedEventArgs e)

@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 using System.Xml.Linq;
+using System.Xml;
 
 namespace BankomatWPF
 {
@@ -25,18 +26,20 @@ namespace BankomatWPF
 
 
 
-
-        public static XDocument xmlDokument = XDocument.Load("Log.xml");
-        public static XElement largeTextElement = xmlDokument.Element("Log");
+        public static XmlNode logNode = MainWindow.doc.SelectSingleNode("//Log");
+        public static string log = String.Empty;
         
         public Log()
         {
             InitializeComponent();
         }
 
-        public void ZapiszLog()
+        public static void ZapiszLog(string nazwa,string text)
         {
-            Log.xmlDokument.Save("Log.xml");
+            XmlNode entryNode = MainWindow.doc.CreateElement(nazwa);
+            entryNode.InnerText = text;
+            logNode.AppendChild(entryNode);
+            MainWindow.doc.Save("Log.xml");
         }
 
         private void btnPowrot_Click(object sender, RoutedEventArgs e)

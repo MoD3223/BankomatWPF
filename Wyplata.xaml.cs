@@ -43,14 +43,22 @@ namespace BankomatWPF
 
         private void btnZatwierdz_Click(object sender, RoutedEventArgs e)
         {
-            if (x%10 == 0)
-            {
 
+            Log.log = MainWindow.Start(200, Log.log);
+
+            if (String.IsNullOrEmpty(Log.log))
+            {
+                MainWindow.NavS.Navigate(new Uri("Blad.xaml", UriKind.Relative));
             }
             else
             {
 
+                Log.ZapiszLog("Wyplata", MainWindow.DzisiejszaData() + " " + Log.log);
+                Log.log = String.Empty;
+                MainWindow.SaveDictionaryFromLog();
             }
+
+
         }
 
         private void txtBoxWyplata_TextChanged(object sender, TextChangedEventArgs e)
