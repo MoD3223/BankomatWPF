@@ -18,8 +18,18 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        
-        
+
+        <Button x:Name="btnPokaz" Content=" Pokaz logi  " Background="LightPink" Foreground="White" FontSize="48" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,100,0,0" Click="btnPokaz_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border CornerRadius="20" Background="{TemplateBinding Background}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+
         <Button x:Name="btnWroc" Content=" Powrot  " Background="LightPink" Foreground="White" Grid.Row="1" FontSize="48" VerticalAlignment="Bottom" HorizontalAlignment="Center" Click="btnPowrot_Click">
             <Button.Template>
                 <ControlTemplate TargetType="Button">

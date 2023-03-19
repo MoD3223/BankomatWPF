@@ -41,7 +41,10 @@ namespace BankomatWPF
         private void btnZeruj_Click(object sender, RoutedEventArgs e)
         {
             ZerujBanknoty(MainWindow.banknoty);
-            //Dodac log tutaj
+            Log.ZapiszLog("Czyszczenie", MainWindow.DzisiejszaData() + " Wyczyszczono liczbe banknotow.");
+
+            MainWindow.SaveDictionaryToLog();
+
         }
 
         private void btnLog_Click(object sender, RoutedEventArgs e)

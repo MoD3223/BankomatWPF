@@ -21,20 +21,12 @@ namespace BankomatWPF
     /// </summary>
     public partial class Wyplata : Page
     {
-        Decimal x;
+        int x;
         public Wyplata()
         {
             InitializeComponent();
         }
 
-        private void UsunLitery()
-        {
-            String tekst;
-            tekst = txtBoxWyplata.Text.ToString();
-            tekst = Regex.Replace(tekst, "[^0-9]", "");
-            txtBoxWyplata.Text = tekst;
-            txtBoxWyplata.SelectionStart = txtBoxWyplata.Text.Length;
-        }
 
         private void btnPowrot_Click(object sender, RoutedEventArgs e)
         {
@@ -44,36 +36,82 @@ namespace BankomatWPF
         private void btnZatwierdz_Click(object sender, RoutedEventArgs e)
         {
 
-            Log.log = MainWindow.Start(200, Log.log);
-
+            Log.log = MainWindow.Start(x, Log.log);
+            //
             if (String.IsNullOrEmpty(Log.log))
             {
                 MainWindow.NavS.Navigate(new Uri("Blad.xaml", UriKind.Relative));
+                //Log.ZapiszLog("Blad", MainWindow.DzisiejszaData() + $" Blad przy wyplacaniu pieniedzy. Probowano wyplacic {}. Sprawdz stan banknotow!");
             }
             else
             {
 
                 Log.ZapiszLog("Wyplata", MainWindow.DzisiejszaData() + " " + Log.log);
                 Log.log = String.Empty;
-                MainWindow.SaveDictionaryFromLog();
+                MainWindow.SaveDictionaryToLog();
             }
 
 
         }
 
-        private void txtBoxWyplata_TextChanged(object sender, TextChangedEventArgs e)
+        private void btn10Up_Click(object sender, RoutedEventArgs e)
         {
-            UsunLitery();
-            if (!Decimal.TryParse(txtBoxWyplata.Text,out x))
-            {
-                txtBoxWyplata.Text = String.Empty;
-                MainWindow.NavS.Navigate(new Uri("Blad.xaml",UriKind.Relative));
-            }
-            else
-            {
-                x = Decimal.Parse(txtBoxWyplata.Text);
-            }
-            
+
+        }
+
+        private void btn10Down_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn20Down_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn50Down_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn100Down_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn200Down_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn500Down_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn20Up_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn50Up_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn100Up_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn200Up_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn500Up_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

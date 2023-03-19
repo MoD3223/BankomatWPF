@@ -23,7 +23,7 @@
             </Button.Template>
         </Button>
 
-        <Button x:Name="btnLog" Content=" Wyswietl logi  " Background="LightPink" Foreground="White" FontSize="48" VerticalAlignment="Center" HorizontalAlignment="Left" Click="btnLog_Click">
+        <Button x:Name="btnLog" Content=" Panel logow  " Background="LightPink" Foreground="White" FontSize="48" VerticalAlignment="Center" HorizontalAlignment="Left" Click="btnLog_Click">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Border Background="{TemplateBinding Background}">

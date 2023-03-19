@@ -12,8 +12,109 @@
         <TextBlock Text="Wybierz kwote do wyplacenia" Foreground="White" HorizontalAlignment="Center" Margin="0,10,0,0" FontSize="24"/>
         <TextBlock Text="potem kliknij zatwierdz" Foreground="White" HorizontalAlignment="Center" Margin="0,40,0,0" FontSize="24"/>
 
-        <TextBox x:Name="txtBoxWyplata" Width="500" Height="70" Background="LightPink" Margin="0,-100,0,0" Foreground="White" FontSize="48" TextChanged="txtBoxWyplata_TextChanged"/>
-        <Button x:Name="btnZatwierdz" Content=" Zatwierdz " Background="LightPink" Foreground="White" FontSize="48" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,50,0,0" Click="btnZatwierdz_Click">
+        <Button x:Name="btn10Down" Background="LightPink" Foreground="White" FontSize="48" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="107,243,0,0" Click="btn10Down_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}">
+                        <Border.CornerRadius>
+                            <CornerRadius TopLeft="20" TopRight="20" BottomLeft="20" BottomRight="20"/>
+                        </Border.CornerRadius>
+                        <TextBlock Text="^" RenderTransformOrigin="0.5,0.5">
+                            <TextBlock.RenderTransform>
+                                <RotateTransform Angle="180"/>
+                            </TextBlock.RenderTransform>
+                        </TextBlock>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button x:Name="btn20Down" Background="LightPink" Foreground="White" FontSize="48" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,50" Click="btn20Down_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}">
+                        <Border.CornerRadius>
+                            <CornerRadius TopLeft="20" TopRight="20" BottomLeft="20" BottomRight="20"/>
+                        </Border.CornerRadius>
+                        <TextBlock Text="^" RenderTransformOrigin="0.5,0.5">
+                            <TextBlock.RenderTransform>
+                                <RotateTransform Angle="180"/>
+                            </TextBlock.RenderTransform>
+                        </TextBlock>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button x:Name="btn50Down" Background="LightPink" Foreground="White" FontSize="48" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,50" Click="btn50Down_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}">
+                        <Border.CornerRadius>
+                            <CornerRadius TopLeft="20" TopRight="20" BottomLeft="20" BottomRight="20"/>
+                        </Border.CornerRadius>
+                        <TextBlock Text="^" RenderTransformOrigin="0.5,0.5">
+                            <TextBlock.RenderTransform>
+                                <RotateTransform Angle="180"/>
+                            </TextBlock.RenderTransform>
+                        </TextBlock>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button x:Name="btn100Down" Background="LightPink" Foreground="White" FontSize="48" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,50" Click="btn100Down_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}">
+                        <Border.CornerRadius>
+                            <CornerRadius TopLeft="20" TopRight="20" BottomLeft="20" BottomRight="20"/>
+                        </Border.CornerRadius>
+                        <TextBlock Text="^" RenderTransformOrigin="0.5,0.5">
+                            <TextBlock.RenderTransform>
+                                <RotateTransform Angle="180"/>
+                            </TextBlock.RenderTransform>
+                        </TextBlock>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button x:Name="btn200Down" Background="LightPink" Foreground="White" FontSize="48" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,50" Click="btn200Down_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}">
+                        <Border.CornerRadius>
+                            <CornerRadius TopLeft="20" TopRight="20" BottomLeft="20" BottomRight="20"/>
+                        </Border.CornerRadius>
+                        <TextBlock Text="^" RenderTransformOrigin="0.5,0.5">
+                            <TextBlock.RenderTransform>
+                                <RotateTransform Angle="180"/>
+                            </TextBlock.RenderTransform>
+                        </TextBlock>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button x:Name="btn500Down" Background="LightPink" Foreground="White" FontSize="48" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,50" Click="btn500Down_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}">
+                        <Border.CornerRadius>
+                            <CornerRadius TopLeft="20" TopRight="20" BottomLeft="20" BottomRight="20"/>
+                        </Border.CornerRadius>
+                        <TextBlock Text="^" RenderTransformOrigin="0.5,0.5">
+                            <TextBlock.RenderTransform>
+                                <RotateTransform Angle="180"/>
+                            </TextBlock.RenderTransform>
+                        </TextBlock>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button x:Name="btn10Up" Content="^" Background="LightPink" Foreground="White" FontSize="48" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="12,243,0,0" Click="btn10Up_Click">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Border CornerRadius="20" Background="{TemplateBinding Background}">
@@ -23,11 +124,80 @@
             </Button.Template>
         </Button>
 
-
-        <Button x:Name="btnWroc" Content=" Powrot  " Background="LightPink" Foreground="White" FontSize="48" VerticalAlignment="Bottom" HorizontalAlignment="Center" Click="btnPowrot_Click">
+        <Button x:Name="btn20Up" Content="^" Background="LightPink" Foreground="White" FontSize="48" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,100,0,0" Click="btn20Up_Click">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Border CornerRadius="20" Background="{TemplateBinding Background}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="btn50Up" Content="^" Background="LightPink" Foreground="White" FontSize="48" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,100,0,0" Click="btn50Up_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border CornerRadius="20" Background="{TemplateBinding Background}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button x:Name="btn100Up" Content="^" Background="LightPink" Foreground="White" FontSize="48" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,100,0,0" Click="btn100Up_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border CornerRadius="20" Background="{TemplateBinding Background}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button x:Name="btn200Up" Content="^" Background="LightPink" Foreground="White" FontSize="48" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,100,0,0" Click="btn200Up_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border CornerRadius="20" Background="{TemplateBinding Background}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button x:Name="btn500Up" Content="^" Background="LightPink" Foreground="White" FontSize="48" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,100,0,0" Click="btn500Up_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border CornerRadius="20" Background="{TemplateBinding Background}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <TextBlock Text="10" Foreground="White" FontSize="48" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="50,100,0,0"/>
+
+
+
+        <Button x:Name="btnZatwierdz" Content=" Zatwierdz " Background="LightPink" Foreground="White" FontSize="48" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,0,50"  Click="btnZatwierdz_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}">
+                        <Border.CornerRadius>
+                            <CornerRadius TopLeft="20" TopRight="0" BottomLeft="20" BottomRight="0"/>
+                        </Border.CornerRadius>
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+
+        <Button x:Name="btnWroc" Content=" Powrot  " Background="LightPink" Foreground="White" FontSize="48" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,0,0,50" Click="btnPowrot_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}">
+                        <Border.CornerRadius>
+                            <CornerRadius TopLeft="0" TopRight="20" BottomLeft="0" BottomRight="20"/>
+                        </Border.CornerRadius>
                         <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Border>
                 </ControlTemplate>

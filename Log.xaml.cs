@@ -25,8 +25,6 @@ namespace BankomatWPF
     {
 
 
-
-        public static XmlNode logNode = MainWindow.doc.SelectSingleNode("//Log");
         public static string log = String.Empty;
         
         public Log()
@@ -36,6 +34,7 @@ namespace BankomatWPF
 
         public static void ZapiszLog(string nazwa,string text)
         {
+            XmlNode logNode = MainWindow.doc.SelectSingleNode("/Root/Log");
             XmlNode entryNode = MainWindow.doc.CreateElement(nazwa);
             entryNode.InnerText = text;
             logNode.AppendChild(entryNode);
@@ -49,7 +48,16 @@ namespace BankomatWPF
 
         private void btnWyczysc_Click(object sender, RoutedEventArgs e)
         {
+            string filePath = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location), "Log.xml");
+            MainWindow.doc.RemoveAll();
+            MainWindow.StworzPlik(MainWindow.doc);
+            MainWindow.doc.Load("Log.xml");
+        }
 
+        private void btnPokaz_Click(object sender, RoutedEventArgs e)
+        {
+            string folderPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+            System.Diagnostics.Process.Start(folderPath);
         }
     }
 }

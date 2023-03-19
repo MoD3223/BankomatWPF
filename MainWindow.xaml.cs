@@ -37,27 +37,7 @@ namespace BankomatWPF
             if (!File.Exists("Log.xml"))
             {
 
-                XmlDeclaration xmlDecl = doc.CreateXmlDeclaration("1.0", "UTF-8", null);
-                doc.AppendChild(xmlDecl);
-
-                XmlElement rootElem = doc.CreateElement("Root");
-                doc.AppendChild(rootElem);
-
-                XmlElement banknotyElem = doc.CreateElement("BanknotyXML");
-                rootElem.AppendChild(banknotyElem);
-
-                AddNumberElement(doc, banknotyElem, "number1", "500,10");
-                AddNumberElement(doc, banknotyElem, "number2", "200,10");
-                AddNumberElement(doc, banknotyElem, "number3", "100,10");
-                AddNumberElement(doc, banknotyElem, "number4", "50,10");
-                AddNumberElement(doc, banknotyElem, "number5", "20,10");
-                AddNumberElement(doc, banknotyElem, "number6", "10,10");
-
-                XmlElement logElem = doc.CreateElement("Log");
-                rootElem.AppendChild(logElem);
-
-
-                doc.Save("Log.xml");
+                StworzPlik(doc);
             }
             else
             {
@@ -77,6 +57,42 @@ namespace BankomatWPF
 
 
 
+
+
+
+
+
+
+
+
+
+        public static void StworzPlik(XmlDocument docLokalny)
+        {
+            XmlDeclaration xmlDecl = docLokalny.CreateXmlDeclaration("1.0", "UTF-8", null);
+            docLokalny.AppendChild(xmlDecl);
+
+            XmlElement rootElem = docLokalny.CreateElement("Root");
+            docLokalny.AppendChild(rootElem);
+
+            XmlElement banknotyElem = docLokalny.CreateElement("BanknotyXML");
+            rootElem.AppendChild(banknotyElem);
+
+            AddNumberElement(docLokalny, banknotyElem, "number1", "500,10");
+            AddNumberElement(docLokalny, banknotyElem, "number2", "200,10");
+            AddNumberElement(docLokalny, banknotyElem, "number3", "100,10");
+            AddNumberElement(docLokalny, banknotyElem, "number4", "50,10");
+            AddNumberElement(docLokalny, banknotyElem, "number5", "20,10");
+            AddNumberElement(docLokalny, banknotyElem, "number6", "10,10");
+
+            XmlElement logElem = docLokalny.CreateElement("Log");
+            rootElem.AppendChild(logElem);
+
+
+            docLokalny.Save("Log.xml");
+        }
+
+
+
         public static void LoadDictionaryFromLog()
         {
             XmlNodeList nodes = doc.SelectNodes("/Root//BanknotyXML/*");
@@ -89,7 +105,7 @@ namespace BankomatWPF
             }
         }
 
-        public static void SaveDictionaryFromLog()
+        public static void SaveDictionaryToLog()
         {
             XmlNode banknotyElem = doc.SelectSingleNode("/Root/BanknotyXML");
 
