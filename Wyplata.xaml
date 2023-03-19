@@ -12,7 +12,7 @@
         <TextBlock Text="Wybierz kwote do wyplacenia" Foreground="White" HorizontalAlignment="Center" Margin="0,10,0,0" FontSize="24"/>
         <TextBlock Text="potem kliknij zatwierdz" Foreground="White" HorizontalAlignment="Center" Margin="0,40,0,0" FontSize="24"/>
 
-        <Button x:Name="btn10Down" Background="LightPink" Foreground="White" FontSize="48" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="107,243,0,0" Click="btn10Down_Click">
+        <Button x:Name="btn10Down" Background="LightPink" Foreground="White" FontSize="48" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="115,75,0,0" Click="btn10Down_Click">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Border Background="{TemplateBinding Background}">
@@ -29,7 +29,7 @@
             </Button.Template>
         </Button>
 
-        <Button x:Name="btn20Down" Background="LightPink" Foreground="White" FontSize="48" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,50" Click="btn20Down_Click">
+        <Button x:Name="btn20Down" Background="LightPink" Foreground="White" FontSize="48" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="115,150,0,0" Click="btn20Down_Click">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Border Background="{TemplateBinding Background}">
@@ -46,7 +46,7 @@
             </Button.Template>
         </Button>
 
-        <Button x:Name="btn50Down" Background="LightPink" Foreground="White" FontSize="48" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,50" Click="btn50Down_Click">
+        <Button x:Name="btn50Down" Background="LightPink" Foreground="White" FontSize="48" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="115,225,0,0" Click="btn50Down_Click">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Border Background="{TemplateBinding Background}">
@@ -63,7 +63,7 @@
             </Button.Template>
         </Button>
 
-        <Button x:Name="btn100Down" Background="LightPink" Foreground="White" FontSize="48" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,50" Click="btn100Down_Click">
+        <Button x:Name="btn100Down" Background="LightPink" Foreground="White" FontSize="48" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="750,75,0,0" Click="btn100Down_Click">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Border Background="{TemplateBinding Background}">
@@ -80,7 +80,7 @@
             </Button.Template>
         </Button>
 
-        <Button x:Name="btn200Down" Background="LightPink" Foreground="White" FontSize="48" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,50" Click="btn200Down_Click">
+        <Button x:Name="btn200Down" Background="LightPink" Foreground="White" FontSize="48" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="750,150,0,0" Click="btn200Down_Click">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Border Background="{TemplateBinding Background}">
@@ -97,7 +97,7 @@
             </Button.Template>
         </Button>
 
-        <Button x:Name="btn500Down" Background="LightPink" Foreground="White" FontSize="48" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,50" Click="btn500Down_Click">
+        <Button x:Name="btn500Down" Background="LightPink" Foreground="White" FontSize="48" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="750,225,0,0" Click="btn500Down_Click">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Border Background="{TemplateBinding Background}">
@@ -114,7 +114,7 @@
             </Button.Template>
         </Button>
 
-        <Button x:Name="btn10Up" Content="^" Background="LightPink" Foreground="White" FontSize="48" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="12,243,0,0" Click="btn10Up_Click">
+        <Button x:Name="btn10Up" Content="^" Background="LightPink" Foreground="White" FontSize="48" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20,75,0,0" Click="btn10Up_Click">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Border CornerRadius="20" Background="{TemplateBinding Background}">
@@ -124,7 +124,7 @@
             </Button.Template>
         </Button>
 
-        <Button x:Name="btn20Up" Content="^" Background="LightPink" Foreground="White" FontSize="48" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,100,0,0" Click="btn20Up_Click">
+        <Button x:Name="btn20Up" Content="^" Background="LightPink" Foreground="White" FontSize="48" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20,150,0,0" Click="btn20Up_Click">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Border CornerRadius="20" Background="{TemplateBinding Background}">
@@ -133,17 +133,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button x:Name="btn50Up" Content="^" Background="LightPink" Foreground="White" FontSize="48" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,100,0,0" Click="btn50Up_Click">
-            <Button.Template>
-                <ControlTemplate TargetType="Button">
-                    <Border CornerRadius="20" Background="{TemplateBinding Background}">
-                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    </Border>
-                </ControlTemplate>
-            </Button.Template>
-        </Button>
-
-        <Button x:Name="btn100Up" Content="^" Background="LightPink" Foreground="White" FontSize="48" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,100,0,0" Click="btn100Up_Click">
+        <Button x:Name="btn50Up" Content="^" Background="LightPink" Foreground="White" FontSize="48" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20,225,0,0" Click="btn50Up_Click">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Border CornerRadius="20" Background="{TemplateBinding Background}">
@@ -153,7 +143,7 @@
             </Button.Template>
         </Button>
 
-        <Button x:Name="btn200Up" Content="^" Background="LightPink" Foreground="White" FontSize="48" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,100,0,0" Click="btn200Up_Click">
+        <Button x:Name="btn100Up" Content="^" Background="LightPink" Foreground="White" FontSize="48" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="629,75,0,0" Click="btn100Up_Click">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Border CornerRadius="20" Background="{TemplateBinding Background}">
@@ -163,7 +153,7 @@
             </Button.Template>
         </Button>
 
-        <Button x:Name="btn500Up" Content="^" Background="LightPink" Foreground="White" FontSize="48" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,100,0,0" Click="btn500Up_Click">
+        <Button x:Name="btn200Up" Content="^" Background="LightPink" Foreground="White" FontSize="48" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="629,150,0,0" Click="btn200Up_Click">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Border CornerRadius="20" Background="{TemplateBinding Background}">
@@ -173,9 +163,25 @@
             </Button.Template>
         </Button>
 
-        <TextBlock Text="10" Foreground="White" FontSize="48" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="50,100,0,0"/>
+        <Button x:Name="btn500Up" Content="^" Background="LightPink" Foreground="White" FontSize="48" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="629,225,0,0" Click="btn500Up_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border CornerRadius="20" Background="{TemplateBinding Background}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
 
+        <TextBlock Text="10" Foreground="White" FontSize="48" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="57,75,0,0"/>
+        <TextBlock Text="20" Foreground="White" FontSize="48" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="57,150,0,0"/>
+        <TextBlock Text="50" Foreground="White" FontSize="48" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="57,225,0,0"/>
+        <TextBlock Text="100" Foreground="White" FontSize="48" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="667,75,0,0"/>
+        <TextBlock Text="200" Foreground="White" FontSize="48" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="667,150,0,0"/>
+        <TextBlock Text="500" Foreground="White" FontSize="48" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="667,225,0,0"/>
 
+        <TextBlock x:Name="txtBoxKwota" Text="0" Foreground="White" FontSize="48" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,100,0"/>
+        <TextBlock Text="PLN" Foreground="White" FontSize="48" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="420,0,0,0"/>
 
         <Button x:Name="btnZatwierdz" Content=" Zatwierdz " Background="LightPink" Foreground="White" FontSize="48" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,0,50"  Click="btnZatwierdz_Click">
             <Button.Template>

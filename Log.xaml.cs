@@ -52,6 +52,7 @@ namespace BankomatWPF
             MainWindow.doc.RemoveAll();
             MainWindow.StworzPlik(MainWindow.doc);
             MainWindow.doc.Load("Log.xml");
+            MainWindow.LoadDictionaryFromLog();
         }
 
         private void btnPokaz_Click(object sender, RoutedEventArgs e)

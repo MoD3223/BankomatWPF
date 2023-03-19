@@ -21,7 +21,7 @@ namespace BankomatWPF
     /// </summary>
     public partial class Wyplata : Page
     {
-        int x;
+        int x = 0;
         public Wyplata()
         {
             InitializeComponent();
@@ -41,12 +41,12 @@ namespace BankomatWPF
             if (String.IsNullOrEmpty(Log.log))
             {
                 MainWindow.NavS.Navigate(new Uri("Blad.xaml", UriKind.Relative));
-                //Log.ZapiszLog("Blad", MainWindow.DzisiejszaData() + $" Blad przy wyplacaniu pieniedzy. Probowano wyplacic {}. Sprawdz stan banknotow!");
+                Log.ZapiszLog("Blad", MainWindow.DzisiejszaData() + $" Blad przy wyplacaniu pieniedzy. Probowano wyplacic {x}. Sprawdz stan banknotow!");
             }
             else
             {
 
-                Log.ZapiszLog("Wyplata", MainWindow.DzisiejszaData() + " " + Log.log);
+                Log.ZapiszLog("Wyplata", MainWindow.DzisiejszaData() + " " + x + "PLN" + " " + Log.log);
                 Log.log = String.Empty;
                 MainWindow.SaveDictionaryToLog();
             }
@@ -56,62 +56,89 @@ namespace BankomatWPF
 
         private void btn10Up_Click(object sender, RoutedEventArgs e)
         {
-
+            x += 10;
+            
+            txtBoxKwota.Text = x.ToString();
         }
 
         private void btn10Down_Click(object sender, RoutedEventArgs e)
         {
-
+            x -= 10;
+            SprawdzZero();
+            txtBoxKwota.Text = x.ToString();
         }
 
         private void btn20Down_Click(object sender, RoutedEventArgs e)
         {
-
+            x -= 20;
+            SprawdzZero();
+            txtBoxKwota.Text = x.ToString();
         }
 
         private void btn50Down_Click(object sender, RoutedEventArgs e)
         {
-
+            x -= 50;
+            SprawdzZero();
+            txtBoxKwota.Text = x.ToString();
         }
 
         private void btn100Down_Click(object sender, RoutedEventArgs e)
         {
-
+            x -= 100;
+            SprawdzZero();
+            txtBoxKwota.Text = x.ToString();
         }
 
         private void btn200Down_Click(object sender, RoutedEventArgs e)
         {
-
+            x -= 200;
+            SprawdzZero();
+            txtBoxKwota.Text = x.ToString();
         }
 
         private void btn500Down_Click(object sender, RoutedEventArgs e)
         {
-
+            x -= 500;
+            SprawdzZero();
+            txtBoxKwota.Text = x.ToString();
         }
 
         private void btn20Up_Click(object sender, RoutedEventArgs e)
         {
-
+            x += 20;
+            txtBoxKwota.Text = x.ToString();
         }
 
         private void btn50Up_Click(object sender, RoutedEventArgs e)
         {
-
+            x += 50;
+            txtBoxKwota.Text = x.ToString();
         }
 
         private void btn100Up_Click(object sender, RoutedEventArgs e)
         {
-
+            x += 100;
+            txtBoxKwota.Text = x.ToString();
         }
 
         private void btn200Up_Click(object sender, RoutedEventArgs e)
         {
-
+            x += 200;
+            txtBoxKwota.Text = x.ToString();
         }
 
         private void btn500Up_Click(object sender, RoutedEventArgs e)
         {
+            x += 500;
+            txtBoxKwota.Text = x.ToString();
+        }
 
+        private void SprawdzZero()
+        {
+            if (x < 0)
+            {
+                x = 0;
+            }
         }
     }
 }

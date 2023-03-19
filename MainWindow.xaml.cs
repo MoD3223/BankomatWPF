@@ -24,6 +24,15 @@ namespace BankomatWPF
     /// Interaction logic for MainWindow.xaml
     /// </summary>
    
+
+    ///TODO:
+    ///Dodanie podziekowania za wykonane tranzakcje
+    ///Dodanie ekranu wplaty
+    ///Dodanie logow do wplat
+
+
+
+
     public partial class MainWindow : Window
     {
         public static NavigationService NavS => ((MainWindow)Application.Current.MainWindow).MainFrame.NavigationService;
@@ -95,6 +104,7 @@ namespace BankomatWPF
 
         public static void LoadDictionaryFromLog()
         {
+            banknoty.Clear();
             XmlNodeList nodes = doc.SelectNodes("/Root//BanknotyXML/*");
             foreach (XmlNode node in nodes)
             {
@@ -137,7 +147,7 @@ namespace BankomatWPF
             Updatebanknoty(bestCombination, banknoty);
 
             int liczba = 0;
-            wyplataLog += "Wyplacono Banknoty:";
+            wyplataLog += "Wydano Banknoty:";
             foreach (int banknote in bestCombination)
             {
                 liczba += 1;
