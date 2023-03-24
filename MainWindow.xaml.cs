@@ -5,6 +5,7 @@ using System.Linq;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -23,15 +24,6 @@ namespace BankomatWPF
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-   
-
-    ///TODO:
-    ///Dodanie podziekowania za wykonane tranzakcje
-    ///Dodanie ekranu wplaty
-    ///Dodanie logow do wplat
-
-
-
 
     public partial class MainWindow : Window
     {
@@ -252,6 +244,14 @@ namespace BankomatWPF
                 banknoty[banknote]--;
             }
         }
+
+
+
+
+
+
+
+
 
 
 

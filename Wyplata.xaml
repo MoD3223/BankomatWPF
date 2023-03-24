@@ -180,8 +180,7 @@
         <TextBlock Text="200" Foreground="White" FontSize="48" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="667,150,0,0"/>
         <TextBlock Text="500" Foreground="White" FontSize="48" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="667,225,0,0"/>
 
-        <TextBlock x:Name="txtBoxKwota" Text="0" Foreground="White" FontSize="48" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,100,0"/>
-        <TextBlock Text="PLN" Foreground="White" FontSize="48" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="420,0,0,0"/>
+        <TextBlock x:Name="txtBoxKwota" Text="0 PLN" Foreground="White" FontSize="48" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
         <Button x:Name="btnZatwierdz" Content=" Zatwierdz " Background="LightPink" Foreground="White" FontSize="48" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,0,50"  Click="btnZatwierdz_Click">
             <Button.Template>

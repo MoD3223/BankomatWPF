@@ -4,9 +4,9 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:BankomatWPF"
-      mc:Ignorable="d" 
+      mc:Ignorable="d"
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Aplikacja Bankomat: Glowne okno" Height="410" Width="800" Background="#483D8B">
+      Title="Aplikacja Bankomat: Glowne okno" Background="#483D8B">
     <Grid x:Name="GlownyGrid">
 
         <TextBlock Text="Witamy w Banku." Foreground="White" HorizontalAlignment="Center" Margin="0,10,0,0" FontSize="24"/>

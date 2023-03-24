@@ -59,8 +59,14 @@
     <Compile Include="Blad.xaml.cs">
       <DependentUpon>Blad.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Haslo.xaml.cs">
+      <DependentUpon>Haslo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Log.xaml.cs">
       <DependentUpon>Log.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sukces.xaml.cs">
+      <DependentUpon>Sukces.xaml</DependentUpon>
     </Compile>
     <Compile Include="Wplata.xaml.cs">
       <DependentUpon>Wplata.xaml</DependentUpon>
@@ -73,6 +79,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="GlowneOkno.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Haslo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -96,6 +106,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="PanelAdministracyjny.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Sukces.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -17,16 +17,15 @@ using System.Windows.Shapes;
 namespace BankomatWPF
 {
     /// <summary>
-    /// Interaction logic for Blad.xaml
+    /// Interaction logic for Sukces.xaml
     /// </summary>
-    public partial class Blad : Page
+    public partial class Sukces : Page
     {
-        public Blad()
+        public Sukces()
         {
             InitializeComponent();
             txtLog.Text = Log.log;
         }
-
 
         private void btnPowrot_Click(object sender, RoutedEventArgs e)
         {

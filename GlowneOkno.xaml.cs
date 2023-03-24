@@ -40,7 +40,7 @@ namespace BankomatWPF
         private void btnPanel_Click(object sender, RoutedEventArgs e)
         {
             
-            MainWindow.NavS.Navigate(new Uri("PanelAdministracyjny.xaml", UriKind.Relative));
+            MainWindow.NavS.Navigate(new Uri("Haslo.xaml", UriKind.Relative));
         }
     }
 }

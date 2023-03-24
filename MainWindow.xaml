@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BankomatWPF"
         mc:Ignorable="d"
-        Title="Aplikacja Bankomat" Height="450" Width="800" Background="#483D8B" ResizeMode="NoResize">
+        Title="Aplikacja Bankomat" Height="650" Width="850" Background="#483D8B" ResizeMode="NoResize">
     <Grid>
         <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
     </Grid>
